@@ -1,2 +1,0 @@
-# glock-lsu
-G website
