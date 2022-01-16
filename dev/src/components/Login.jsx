@@ -1,17 +1,9 @@
 import React, {useState} from 'react';
-import '../App.css';
-// import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
-// import "./Login.css";
+import './App.css';
+import "./Login.css";
 
 const Login = ({loggedIn, setLoggedIn}) => {
 
-    // const [isLoggedIn, setIsLoggedIn] =  useState('false');
-
-    // const onClickLogin = () => {
-    //      setLoggedIn(!loggedIn)
-    //       console.log(loggedIn);
-    // }
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
   
@@ -47,7 +39,7 @@ const Login = ({loggedIn, setLoggedIn}) => {
           // Invalid password
           setErrorMessages({ name: "pass", message: errors.pass });
         } else {
-          setIsSubmitted(true);
+          setIsSubmitted(!isSubmitted);
           setLoggedIn(!loggedIn);
         }
       } else {
@@ -67,12 +59,12 @@ const Login = ({loggedIn, setLoggedIn}) => {
       <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="input-container">
-            <label>Username </label>
+            <label>username</label>
             <input type="text" name="uname" required />
             {renderErrorMessage("uname")}
           </div>
           <div className="input-container">
-            <label>Password </label>
+            <label>password</label>
             <input type="password" name="pass" required />
             {renderErrorMessage("pass")}
           </div>
@@ -84,25 +76,15 @@ const Login = ({loggedIn, setLoggedIn}) => {
     );
   
     return (
-      <div className="App-header">
-        <div className="login-form">
-          <h3 className="title">Sign In</h3>
+    <div className="App">
+ <div className="login-form">
+          <h5 className="title">welcome</h5>
           {renderForm}
         </div>
-      </div>
-    );
-  
-    // return (
-    //     <header className="App-header">
-    //         <div>
-            
-    //         <button onClick={()=> onClickLogin()}>Login</button>
-    //         </div>
-    //     </header>
+    </div>
        
-    // )
-
-
+      
+    );
 
 };
 
