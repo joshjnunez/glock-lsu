@@ -6,13 +6,19 @@ const Home = ()=>{
 
 return(
     <div>
-    <div>glock home</div>
+    <div>welcome to glock</div>
     <nav>
-        <Link to="/members">members</Link>
+        <Link to="/members">
+          <button>members</button>
+        </Link>
         <div></div>
-        <Link to="/blog">blog</Link>
+        <Link to="/blog">
+        <button>blog</button>
+        </Link>
         <div></div>
-        <Link to="/contact">contact</Link>
+        <Link to="/contact">
+        <button>contact</button>
+        </Link>
       </nav>
     </div>
 )

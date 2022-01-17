@@ -6,7 +6,9 @@ const Blog = ()=> {
         <div>
         <p>blog page</p>
         <nav>
-        <Link to="/">home</Link>
+        <Link to="/">
+        <button>home</button>
+        </Link>
         </nav>
         </div>
     )
