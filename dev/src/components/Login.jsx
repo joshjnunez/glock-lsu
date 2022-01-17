@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import "./Login.css";
+import useGoogleSheets from 'use-google-sheets';
 
 
 const Login = ({loggedIn, setLoggedIn}) => {
@@ -8,17 +9,23 @@ const Login = ({loggedIn, setLoggedIn}) => {
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
   
+     
+     const { data, loading, error } = useGoogleSheets({
+      apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
+      sheetId: process.env.REACT_APP_GOOGLE_SHEETS_ID,
+    });
+  
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+  
+    if (error) {
+        console.log(error)
+      return <div>Error!</div>;
+    };
+
     // User Login info
-    const database = [
-      {
-        username: "user1",
-        password: "pass1"
-      },
-      {
-        username: "user2",
-        password: "pass2"
-      }
-    ];
+    const database = data[0].data;
   
     const errors = {
       uname: "invalid username",

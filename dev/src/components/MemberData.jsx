@@ -12,11 +12,12 @@ const MemberData = () => {
 
   if (error) {
       console.log(error)
-      console.log(data);
     return <div>Error!</div>;
   }
 
-  return <div>{JSON.stringify(data)}</div>;
+  return <div>{
+    JSON.stringify(data)
+    }</div>;
 };
 
 export default MemberData;

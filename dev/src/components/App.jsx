@@ -12,11 +12,11 @@ import './App.css';
 
 const App = () => {
 
-  // const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  // if(!loggedIn){
-  //   return <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
-  // }
+  if(!loggedIn){
+    return <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
+  }
 
   return (
  <div className="App-header">
